@@ -1,0 +1,477 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CodeBy Ruan — Criação de Sites Profissionais</title>
+  <meta name="description"
+    content="Agência digital focada em criação de sites modernos, responsivos e com performance otimizada." />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@400;600&display=swap"
+    rel="stylesheet"> <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="topbar" data-aos="fade-down">
+      <div class="brand"> <button class="logo" title="Voltar ao topo" aria-label="Voltar ao topo">CB</button>
+        <div class="brand-text">
+          <h1>CodeBy Ruan</h1>
+          <div class="tagline">sites rápidos, limpos e rentáveis</div>
+        </div>
+      </div>
+      <nav class="nav"> <a href="#servicos">Serviços</a> <a href="#portfolio">Portfólio</a> <a href="#precos">Preços</a>
+        <a href="#sobre">Sobre</a> <a href="#depoimentos">Clientes</a> <a href="#faq">FAQ</a> <a href="#contato"
+          class="cta">Orçamento</a> <button id="themeToggle" class="btn-icon" aria-label="Alternar tema">🌓</button>
+        <button id="logoutBtn" class="btn ghost" style="display:none;">Sair</button> <button id="loginBtn"
+          class="btn ghost">Login</button> <button id="logoutBtn" class="btn ghost" style="display:none;">Sair</button>
+      </nav>
+    </header>
+    <main> 
+      
+      <!-- HERO -->
+      <section class="hero" id="home">
+        <div class="hero-left" data-aos="fade-right"> <span class="eyebrow">Agência • Criação de Sites</span>
+          <h2>Sites modernos que convertem visitantes em clientes.</h2>
+          <p class="lead">Design limpo, performance otimizada e SEO básico já incluído. Sites responsivos, landings e
+            lojas com integração a pagamentos e WhatsApp.</p>
+          <div class="cta-row" data-aos="fade-up" data-aos-delay="200"> <a class="btn primary" href="#contato">Receber
+              orçamento</a> <a class="btn ghost" href="#portfolio">Ver portfólio</a> </div>
+          <div class="stats" aria-hidden="true" data-aos="fade-up" data-aos-delay="400">
+            <div class="stat">
+              <div class="num" data-target="120">0</div>
+              <div class="label">Projetos entregues</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-target="98">0</div>
+              <div class="label">Clientes satisfeitos</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-target="7">0</div>
+              <div class="label">Média (dias)</div>
+            </div>
+          </div>
+        </div>
+        <aside class="preview" data-aos="fade-left">
+          <div class="mock">
+            <div class="browser"> <span class="dot red"></span> <span class="dot yellow"></span> <span
+                class="dot green"></span> </div>
+            <div class="content">
+              <h3>Landing de alto impacto</h3>
+              <p>Template otimizado para conversão — formulário, prova social e CTA fixo.</p>
+            </div>
+          </div>
+          <div class="preview-features" data-aos="fade-up">
+            <div class="pill">Suporte 30 dias</div>
+            <div class="pill">Integração WhatsApp</div>
+          </div>
+        </aside>
+      </section>
+
+      <div class="auth-modal" id="authModal">
+       <div class="auth-modal-content"> <button id="closeModalBtn" class="close-modal">&times;</button>
+          <!-- Cabeçalho com mais contexto -->
+         <h2 id="authTitle">Bem-vindo de volta 👋</h2>
+          <p class="auth-subtitle" id="authSubtitle"> Faça login para continuar e acessar todos os recursos exclusivos.
+          </p>
+          <form id="authForm"> <!-- Nome (somente no registro) -->
+            <div id="nameField" class="auth-field hidden"> <span class="icon">👤</span> <input type="text" id="authName"
+                placeholder="Nome completo"> </div> <!-- Email -->
+            <div class="auth-field"> <span class="icon">✉️</span> <input type="email" id="authEmail"
+                placeholder="E-mail" required> </div> <!-- Senha -->
+            <div class="auth-field"> <span class="icon">🔒</span> <input type="password" id="authPassword"
+                placeholder="Senha" required> </div> <!-- Confirmar Senha (somente no registro) -->
+            <div id="confirmPasswordField" class="auth-field hidden"> <span class="icon">✅</span> <input type="password"
+                id="authConfirmPassword" placeholder="Confirmar senha"> </div> <button type="submit" id="authSubmitBtn"
+              class="auth-btn">Entrar</button>
+          </form>
+          <p id="authStatus"></p> <!-- Texto motivacional extra -->
+          <div class="auth-extra">
+            <p>Ainda não tem conta? <span id="toggleAuthMode" class="toggle-link">Crie agora grátis</span></p>
+            <p class="trust-text">🔒 Suas informações estão seguras e nunca serão compartilhadas.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICES -->
+      <section id="servicos" class="section" data-aos="fade-up">
+        <h3>Serviços</h3>
+        <div class="grid-3">
+          <article class="card" data-aos="zoom-in" data-aos-delay="100">
+            <h4>Site Institucional</h4>
+            <p>Páginas rápidas, SEO básico, formulário e integração com WhatsApp.</p>
+          </article>
+          <article class="card" data-aos="zoom-in" data-aos-delay="200">
+            <h4>Landing Page</h4>
+            <p>Foco em conversão: hero, prova social, formulário e CTA persistente.</p>
+          </article>
+          <article class="card" data-aos="zoom-in" data-aos-delay="300">
+            <h4>Loja Virtual</h4>
+            <p>Catálogo, carrinho, checkout e integração com gateways de pagamento.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section id="portfolio" class="section" data-aos="fade-up">
+        <h3>Portfólio</h3>
+        <div class="grid-3">
+          <div class="card thumb" data-aos="fade-up" data-aos-delay="100"> <img
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60"
+              alt="Projeto restaurante">
+            <h4>Restaurante — Reserva online</h4>
+          </div>
+          <div class="card thumb" data-aos="fade-up" data-aos-delay="200"> <img
+              src="https://images.unsplash.com/photo-1521790366051-1f0b8d3d8f24?auto=format&fit=crop&w=1200&q=60"
+              alt="Projeto loja">
+            <h4>Loja Virtual — Aumentou vendas</h4>
+          </div>
+          <div class="card thumb" data-aos="fade-up" data-aos-delay="300"> <img
+              src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=60"
+              alt="Portfolio">
+            <h4>Portfolio Pessoal — Minimalista</h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <!-- PRICING -->
+      <section id="precos" class="section" data-aos="fade-up">
+        <div class="container">
+          <h3>Escolha seu plano</h3>
+          <p class="subheading">Planos flexíveis para atender desde pequenos projetos até sistemas personalizados.</p>
+
+          <div class="pricing-grid">
+            <!-- Plano Básico -->
+            <div class="plan-card" data-aos="flip-left" data-aos-delay="100">
+              <h4>Site Institucional</h4>
+              <div class="price">R$ 1.499</div>
+              <ul class="features">
+                <li>Até 5 páginas</li>
+                <li>SEO básico</li>
+                <li>Formulário de contato</li>
+
+              </ul>
+              <a class="btn primary" href="#contato">Solicitar Orçamento</a>
+            </div>
+
+            <!-- Plano Pro -->
+            <div class="plan-card featured" data-aos="flip-left" data-aos-delay="200">
+              <h4>Pro</h4>
+              <div class="price">R$ 2.900</div>
+              <ul class="features">
+                <li>Landing page ou loja simples</li>
+                <li>SEO avançado</li>
+                <li>Design responsivo e moderno</li>
+                <li>Suporte básico</li>
+              </ul>
+              <a class="btn primary" href="#contato">Solicitar Orçamento</a>
+            </div>
+
+            <!-- Plano Custom -->
+            <div class="plan-card" data-aos="flip-left" data-aos-delay="300">
+              <h4>Custom</h4>
+              <div class="price">Sob consulta</div>
+              <ul class="features">
+                <li>Integrações personalizadas</li>
+                <li>Sistemas sob medida</li>
+                <li>Design exclusivo</li>
+                <li>Suporte premium</li>
+              </ul>
+              <a class="btn primary" href="#contato">Solicitar Orçamento</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="sobre" class="section about" data-aos="fade-up">
+        <div class="container about-grid">
+          <!-- Texto e diferenciais -->
+          <div class="about-text" data-aos="fade-right">
+            <h3>Quem Somos</h3>
+            <p>Na CodeBy Ruan, transformamos ideias em experiências digitais de alto impacto. Criamos soluções que
+              conectam seu negócio a resultados reais — vendas, leads e fortalecimento de marca.</p>
+
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="icon">🎨</div>
+                <h4>Design Responsivo</h4>
+                <p>Sites adaptáveis, modernos e com UX incrível.</p>
+              </div>
+              <div class="feature-card">
+                <div class="icon">⚡</div>
+                <h4>Performance Otimizada</h4>
+                <p>Carregamento rápido, SEO técnico e estabilidade.</p>
+              </div>
+              <div class="feature-card">
+                <div class="icon">🔗</div>
+                <h4>Integrações Inteligentes</h4>
+                <p>WhatsApp, pagamentos e sistemas sob medida.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estatísticas -->
+          <div class="about-stats" data-aos="fade-left">
+            <div class="stat-card">
+              <div class="num" data-target="120">0</div>
+              <div class="label">Projetos</div>
+            </div>
+            <div class="stat-card">
+              <div class="num" data-target="98">0</div>
+              <div class="label">Clientes</div>
+            </div>
+            <div class="stat-card">
+              <div class="num" data-target="4">0</div>
+              <div class="label">Anos de Experiência</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- TESTIMONIALS CAROUSEL -->
+      <section id="depoimentos" class="section" data-aos="fade-up">
+        <h3>O que dizem nossos clientes</h3>
+        <div class="carousel" aria-roledescription="carousel"> <button class="carousel-btn prev"
+            aria-label="Anterior">‹</button>
+          <div class="carousel-track">
+            <blockquote class="slide">
+              <p>“A CodeBy Ruan criou meu site em tempo recorde, lindo e funcional.”</p>
+              <footer>— Maria, Empreendedora</footer>
+            </blockquote>
+            <blockquote class="slide">
+              <p>“Meu restaurante recebeu mais reservas depois do novo site.”</p>
+              <footer>— João, Dono de Restaurante</footer>
+            </blockquote>
+            <blockquote class="slide">
+              <p>“A loja virtual ficou rápida e aumentou minhas vendas.”</p>
+              <footer>— Carla, E-commerce</footer>
+            </blockquote>
+          </div> <button class="carousel-btn next" aria-label="Próximo">›</button>
+        </div>
+      </section> <!-- FAQ -->
+      <section id="faq" class="section" data-aos="fade-up">
+        <h3>Perguntas Frequentes</h3>
+        <div class="faq">
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="100"> <button class="faq-q">Quanto tempo para
+              entrega?</button>
+            <div class="faq-a">Normalmente entre 7 e 14 dias, dependendo da complexidade.</div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="200"> <button class="faq-q">Tem suporte
+              pós-entrega?</button>
+            <div class="faq-a">Sim — 30 dias de suporte incluídos. Temos planos de manutenção também.</div>
+          </div>
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="300"> <button class="faq-q">Aceitam
+              parcelamento?</button>
+            <div class="faq-a">Sim — cartão (parcelamento) e PIX/boleto.</div>
+          </div>
+        </div>
+      </section> <!-- COMO TRABALHAMOS -->
+      <section id="processo" class="section process" data-aos="fade-up">
+        <h3>Como Trabalhamos</h3>
+        <div class="steps">
+          <div class="step" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"> <!-- Ícone SVG (lápis) --> <svg width="40" height="40" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1.003 1.003 0 0 0 0-1.42l-2.34-2.34a1.003 1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z" />
+              </svg> </div>
+            <h4>1. Briefing</h4>
+            <p>Conversamos para entender seu negócio, objetivos e público-alvo.</p>
+          </div>
+          <div class="step" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"> <!-- Ícone SVG (paleta) --> <svg width="40" height="40" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M12 3C7.03 3 3 7.03 3 12a9 9 0 0 0 9 9h1c.55 0 1-.45 1-1v-1.5c0-.83.67-1.5 1.5-1.5H17c2.76 0 5-2.24 5-5 0-4.97-4.03-9-9-9zM7 12c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm3-4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm4-1c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z" />
+              </svg> </div>
+            <h4>2. Design</h4>
+            <p>Criamos a identidade visual do site, com foco em performance e UX.</p>
+          </div>
+          <div class="step" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"> <!-- Ícone SVG (foguete) --> <svg width="40" height="40" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 2.5 1.5 4.67 3.67 5.5L9 21l3-2 3 2-1.33-6.5C17.5 13.67 19 11.5 19 9c0-3.87-3.13-7-7-7z" />
+              </svg> </div>
+            <h4>3. Entrega</h4>
+            <p>Lançamos o site otimizado, pronto para gerar resultados.</p>
+          </div>
+        </div>
+      </section> <!-- NOSSA JORNADA -->
+      <section id="jornada" class="section timeline" data-aos="fade-up">
+        <h3>Nossa Jornada</h3>
+        <div class="timeline-wrapper">
+          <div class="timeline-item" data-aos="fade-right"> <span class="year">2021</span>
+            <p>Início da CodeBy Ruan, criando sites para pequenos negócios.</p>
+          </div>
+          <div class="timeline-item" data-aos="fade-left"> <span class="year">2022</span>
+            <p>Expansão para lojas virtuais e landing pages focadas em conversão.</p>
+          </div>
+          <div class="timeline-item" data-aos="fade-right"> <span class="year">2023</span>
+            <p>Mais de 100 projetos entregues com satisfação comprovada.</p>
+          </div>
+          <div class="timeline-item" data-aos="fade-left"> <span class="year">2024</span>
+            <p>Agência consolidada, pronta para novos desafios digitais.</p>
+          </div>
+        </div>
+      </section> <!-- TABELA DE PLANOS COMPARATIVA -->
+      <section id="comparativo" class="section compare" data-aos="fade-up">
+        <h3>Compare os Planos</h3>
+        <div class="table">
+          <div class="row header">
+            <div class="cell">Recursos</div>
+            <div class="cell destaque">Institucional</div>
+            <div class="cell destaque">Pro</div>
+            <div class="cell destaque">Custom</div>
+          </div>
+          <div class="row">
+            <div class="cell">SEO Básico</div>
+            <div class="cell">✔️</div>
+            <div class="cell">✔️</div>
+            <div class="cell">✔️ Avançado</div>
+          </div>
+          <div class="row">
+            <div class="cell">Integração WhatsApp</div>
+            <div class="cell">✔️</div>
+            <div class="cell">✔️</div>
+            <div class="cell">✔️</div>
+          </div>
+          <div class="row">
+            <div class="cell">Loja Virtual</div>
+            <div class="cell">❌</div>
+            <div class="cell">✔️</div>
+            <div class="cell">✔️ Avançada</div>
+          </div>
+          <div class="row">
+            <div class="cell">Suporte</div>
+            <div class="cell">30 dias</div>
+            <div class="cell">60 dias</div>
+            <div class="cell">Sob consulta</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contato" class="section contact" data-aos="fade-up">
+        <div class="container">
+          <h3>Entraremos em contato com você</h3>
+          <p class="subheading">Preencha o formulário abaixo e nossa equipe retornará com a melhor proposta.</p>
+
+          <div class="contact-grid">
+            <!-- Formulário -->
+            <form id="contactForm" class="contact-form" enctype="multipart/form-data" novalidate>
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+
+              <label for="empresa">Nome da empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa">
+
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="seu@email.com">
+
+              <label for="telefone">Telefone</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
+
+              <label for="momento">Qual seu momento atual?</label>
+              <select id="momento" name="momento" required>
+                <option value="">Escolha uma opção</option>
+                <option>Trabalho em uma empresa e preciso de um orçamento.</option>
+                <option>Sou empreendedor'(a)' e tenho uma demanda para orçar.</option>
+                <option>Quero dar um start em um novo projeto que está nascendo.</option>
+              </select>
+
+              <label for="tipoProjeto">Qual Tipo de projeto necessita?</label>
+              <select id="tipoProjeto" name="tipoProjeto" required>
+                <option value="">Escolha uma opção</option>
+                <option>Desenvolvimento de E-commerce</option>
+                <option>Desenvolvimento de Landing page</option>
+                <option>Outro</option>
+              </select>
+
+              <label for="investimento">Disponibilidade de investimento</label>
+              <select id="investimento" name="investimento" required>
+                <option value="">Escolha uma opção</option>
+                <option>Até R$ 1.500</option>
+                <option>R$ 1.500 a R$ 3.000</option>
+                <option>R$ 3.000 a R$ 5.000</option>
+                <option>R$ 5.000 a R$ 10.000</option>
+                <option>Acima de R$ 10.000</option>
+              </select>
+
+              <label for="descricao">Fale um pouco mais sobre o projeto</label>
+              <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva seu projeto..."></textarea>
+
+              <label for="briefing">Já tem um briefing?</label>
+              <input type="file" id="briefing" name="briefing" accept=".pdf,.doc,.docx,.txt" max="10485760">
+              <small>Máximo 10MB. Formatos: PDF, DOC, DOCX, TXT</small>
+
+              <button class="btn primary" type="submit">Enviar formulário</button>
+
+              <!-- Checkbox Política de Privacidade -->
+              <div class="checkbox-field">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <label for="privacy">Li e aceito a <a href="/politica-privacidade" target="_blank">Política de
+                    Privacidade</a></label>
+              </div>
+
+              <!-- reCAPTCHA -->
+              <div class="captcha">
+                <div class="g-recaptcha" data-sitekey="SEU_SITE_KEY_AQUI"></div>
+              </div>
+
+              <button class="btn primary" type="submit">Enviar formulário</button>
+            </form>
+
+            <!-- Informações rápidas -->
+            <aside class="contact-info" data-aos="fade-left">
+              <h4>Contato rápido</h4>
+              <p>WhatsApp: <strong>+55 11 97667-9788</strong></p>
+              <p>Prazo médio de resposta: <strong>24–48h</strong></p>
+              <p>Atendimento profissional e personalizado.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Script do reCAPTCHA -->
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      </form>
+
+      <!-- Informações rápidas -->
+      <aside class="contact-info" data-aos="fade-left">
+        <h4>Contato rápido</h4>
+        <p>WhatsApp: <strong>+55 11 97667-9788</strong></p>
+        <p>Prazo médio de resposta: <strong>24–48h</strong></p>
+        <p>Atendimento profissional e personalizado.</p>
+      </aside>
+  </div>
+  </div>
+  </section>
+
+  </main>
+  <footer class="footer" data-aos="fade-up">
+    <div class="footer-inner">
+      <div class="brand-sm">
+        <div class="logo small">CB</div>
+        <div>CodeBy Ruan</div>
+      </div>
+      <div class="legal">© <span id="year"></span> Todos os direitos reservados</div>
+      <div class="social"> <a href="#" aria-label="Instagram">IG</a> <a href="#" aria-label="LinkedIn">IN</a> </div>
+    </div>
+  </footer> <button class="float-cta" id="quickQuote" data-aos="zoom-in-up">Pedir orçamento</button>
+  </div>
+  <script src="script.js" defer></script> <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 1000, once: true }); </script>
+</body>
+
+</html>
