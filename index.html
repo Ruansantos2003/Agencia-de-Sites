@@ -12,36 +12,48 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@400;600&display=swap"
-    rel="stylesheet"> <!-- AOS CSS -->
+    rel="stylesheet">
+  <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
 <body>
   <div class="wrap">
+    <!-- HEADER / TOPBAR -->
     <header class="topbar" data-aos="fade-down">
-      <div class="brand"> <button class="logo" title="Voltar ao topo" aria-label="Voltar ao topo">CB</button>
+      <div class="brand">
+        <button class="logo" title="Voltar ao topo" aria-label="Voltar ao topo">CB</button>
         <div class="brand-text">
           <h1>CodeBy Ruan</h1>
           <div class="tagline">sites rápidos, limpos e rentáveis</div>
         </div>
       </div>
-      <nav class="nav"> <a href="#servicos">Serviços</a> <a href="#portfolio">Portfólio</a> <a href="#precos">Preços</a>
-        <a href="#sobre">Sobre</a> <a href="#depoimentos">Clientes</a> <a href="#faq">FAQ</a> <a href="#contato"
-          class="cta">Orçamento</a> <button id="themeToggle" class="btn-icon" aria-label="Alternar tema">🌓</button>
-        <button id="logoutBtn" class="btn ghost" style="display:none;">Sair</button> <button id="loginBtn"
-          class="btn ghost">Login</button> <button id="logoutBtn" class="btn ghost" style="display:none;">Sair</button>
+      <nav class="nav">
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#precos">Preços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#depoimentos">Clientes</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato" class="cta">Orçamento</a>
+        <button id="themeToggle" class="btn-icon" aria-label="Alternar tema">🌓</button>
+        <button id="loginBtn" class="btn ghost">Login</button>
+        <button id="logoutBtn" class="btn ghost" style="display:none;">Sair</button>
       </nav>
     </header>
-    <main> 
-      
-      <!-- HERO -->
+
+    <!-- HERO -->
+    <main>
       <section class="hero" id="home">
-        <div class="hero-left" data-aos="fade-right"> <span class="eyebrow">Agência • Criação de Sites</span>
+        <div class="hero-left" data-aos="fade-right">
+          <span class="eyebrow">Agência • Criação de Sites</span>
           <h2>Sites modernos que convertem visitantes em clientes.</h2>
           <p class="lead">Design limpo, performance otimizada e SEO básico já incluído. Sites responsivos, landings e
             lojas com integração a pagamentos e WhatsApp.</p>
-          <div class="cta-row" data-aos="fade-up" data-aos-delay="200"> <a class="btn primary" href="#contato">Receber
-              orçamento</a> <a class="btn ghost" href="#portfolio">Ver portfólio</a> </div>
+          <div class="cta-row" data-aos="fade-up" data-aos-delay="200">
+            <a class="btn primary" href="#contato">Receber orçamento</a>
+            <a class="btn ghost" href="#portfolio">Ver portfólio</a>
+          </div>
           <div class="stats" aria-hidden="true" data-aos="fade-up" data-aos-delay="400">
             <div class="stat">
               <div class="num" data-target="120">0</div>
@@ -59,8 +71,11 @@
         </div>
         <aside class="preview" data-aos="fade-left">
           <div class="mock">
-            <div class="browser"> <span class="dot red"></span> <span class="dot yellow"></span> <span
-                class="dot green"></span> </div>
+            <div class="browser">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
             <div class="content">
               <h3>Landing de alto impacto</h3>
               <p>Template otimizado para conversão — formulário, prova social e CTA fixo.</p>
@@ -73,30 +88,75 @@
         </aside>
       </section>
 
+      <!-- AUTH MODAL -->
       <div class="auth-modal" id="authModal">
-       <div class="auth-modal-content"> <button id="closeModalBtn" class="close-modal">&times;</button>
-          <!-- Cabeçalho com mais contexto -->
-         <h2 id="authTitle">Bem-vindo de volta 👋</h2>
-          <p class="auth-subtitle" id="authSubtitle"> Faça login para continuar e acessar todos os recursos exclusivos.
-          </p>
-          <form id="authForm"> <!-- Nome (somente no registro) -->
-            <div id="nameField" class="auth-field hidden"> <span class="icon">👤</span> <input type="text" id="authName"
-                placeholder="Nome completo"> </div> <!-- Email -->
-            <div class="auth-field"> <span class="icon">✉️</span> <input type="email" id="authEmail"
-                placeholder="E-mail" required> </div> <!-- Senha -->
-            <div class="auth-field"> <span class="icon">🔒</span> <input type="password" id="authPassword"
-                placeholder="Senha" required> </div> <!-- Confirmar Senha (somente no registro) -->
-            <div id="confirmPasswordField" class="auth-field hidden"> <span class="icon">✅</span> <input type="password"
-                id="authConfirmPassword" placeholder="Confirmar senha"> </div> <button type="submit" id="authSubmitBtn"
-              class="auth-btn">Entrar</button>
+        <div class="auth-modal-content glass">
+          <button id="closeModalBtn" class="close-modal">&times;</button>
+
+          <!-- Cabeçalho -->
+          <div class="auth-header">
+            <h2 id="authTitle">Bem-vindo de volta 👋</h2>
+            <p id="authSubtitle">Entre com seu e-mail e senha ou continue com uma das opções abaixo.</p>
+          </div>
+
+          <!-- Formulário -->
+          <form id="authForm">
+            <!-- Nome (somente no registro) -->
+            <div id="nameField" class="auth-field hidden">
+              <span class="icon">👤</span>
+              <input type="text" id="authName" placeholder="Nome completo">
+            </div>
+
+            <!-- Telefone (somente registro) -->
+            <div id="phoneField" class="auth-field hidden">
+              <span class="icon">📱</span>
+              <input type="tel" id="authPhone" placeholder="Telefone">
+            </div>
+
+            <!-- Email -->
+            <div class="auth-field">
+              <span class="icon">📧</span>
+              <input type="email" id="authEmail" placeholder="E-mail" required>
+            </div>
+
+            <!-- Senha -->
+            <div class="auth-field">
+              <span class="icon">🔑</span>
+              <input type="password" id="authPassword" placeholder="Senha" required>
+            </div>
+
+            <!-- Confirmar Senha (somente registro) -->
+            <div id="confirmPasswordField" class="auth-field hidden">
+              <span class="icon">✅</span>
+              <input type="password" id="authConfirmPassword" placeholder="Confirmar senha">
+            </div>
+
+            <!-- Botão principal -->
+            <button type="submit" id="authSubmitBtn" class="auth-btn primary">Entrar</button>
           </form>
-          <p id="authStatus"></p> <!-- Texto motivacional extra -->
+
+          <!-- Feedback -->
+          <p id="authStatus" class="auth-status"></p>
+
+          <!-- Social login -->
+          <div class="social-login">
+            <p>Ou continue com:</p>
+            <div class="social-buttons">
+              <button class="btn social google">🔴 Google</button>
+              <button class="btn social apple">⚪ Apple</button>
+              <button class="btn social github">⚫ GitHub</button>
+            </div>
+          </div>
+
+          <!-- Extra -->
           <div class="auth-extra">
-            <p>Ainda não tem conta? <span id="toggleAuthMode" class="toggle-link">Crie agora grátis</span></p>
-            <p class="trust-text">🔒 Suas informações estão seguras e nunca serão compartilhadas.</p>
+            <p id="authToggleText">Ainda não tem conta? <span id="toggleAuthMode" class="toggle-link">Crie agora
+                grátis</span></p>
+            <p class="trust-text">🔒 Suas informações estão 100% seguras.</p>
           </div>
         </div>
       </div>
+
 
       <!-- SERVICES -->
       <section id="servicos" class="section" data-aos="fade-up">
@@ -190,50 +250,56 @@
       </section>
 
       <!-- ABOUT -->
-      <section id="sobre" class="section about" data-aos="fade-up">
+      <section id="sobre" class="section about">
         <div class="container about-grid">
+
           <!-- Texto e diferenciais -->
-          <div class="about-text" data-aos="fade-right">
-            <h3>Quem Somos</h3>
-            <p>Na CodeBy Ruan, transformamos ideias em experiências digitais de alto impacto. Criamos soluções que
-              conectam seu negócio a resultados reais — vendas, leads e fortalecimento de marca.</p>
+          <div class="about-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+            <h3 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">Quem Somos</h3>
+            <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+              A <strong>CodeBy Ruan</strong> é uma agência digital focada em criar
+              <strong>sites profissionais, rápidos e estratégicos</strong>.
+              Mais do que páginas bonitas, entregamos soluções que
+              <strong>atraem clientes, geram vendas e fortalecem marcas</strong>.
+            </p>
 
             <div class="features-grid">
-              <div class="feature-card">
+              <div class="feature-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800">
                 <div class="icon">🎨</div>
                 <h4>Design Responsivo</h4>
-                <p>Sites adaptáveis, modernos e com UX incrível.</p>
+                <p>Layout moderno e adaptável a qualquer dispositivo.</p>
               </div>
-              <div class="feature-card">
+              <div class="feature-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
                 <div class="icon">⚡</div>
-                <h4>Performance Otimizada</h4>
-                <p>Carregamento rápido, SEO técnico e estabilidade.</p>
+                <h4>Alta Performance</h4>
+                <p>Sites leves, com carregamento rápido e SEO otimizado.</p>
               </div>
-              <div class="feature-card">
+              <div class="feature-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1200">
                 <div class="icon">🔗</div>
                 <h4>Integrações Inteligentes</h4>
-                <p>WhatsApp, pagamentos e sistemas sob medida.</p>
+                <p>WhatsApp, formulários, pagamentos e sistemas personalizados.</p>
               </div>
             </div>
           </div>
 
           <!-- Estatísticas -->
-          <div class="about-stats" data-aos="fade-left">
-            <div class="stat-card">
+          <div class="about-stats" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+            <div class="stat-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
               <div class="num" data-target="120">0</div>
-              <div class="label">Projetos</div>
+              <div class="label">Projetos Entregues</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
               <div class="num" data-target="98">0</div>
-              <div class="label">Clientes</div>
+              <div class="label">Clientes Satisfeitos</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
               <div class="num" data-target="4">0</div>
               <div class="label">Anos de Experiência</div>
             </div>
           </div>
         </div>
       </section>
+
 
 
 
@@ -365,22 +431,28 @@
         <div class="container">
           <h3>Entraremos em contato com você</h3>
           <p class="subheading">Preencha o formulário abaixo e nossa equipe retornará com a melhor proposta.</p>
-
           <div class="contact-grid">
-            <!-- Formulário -->
+
+
             <form id="contactForm" class="contact-form" enctype="multipart/form-data" novalidate>
+              <!-- Nome -->
               <label for="nome">Nome completo</label>
               <input type="text" id="nome" name="nome" required placeholder="Seu nome">
 
+              <!-- Empresa -->
               <label for="empresa">Nome da empresa</label>
               <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa">
 
+              <!-- Email -->
               <label for="email">Email</label>
               <input type="email" id="email" name="email" required placeholder="seu@email.com">
 
+              <!-- Telefone -->
               <label for="telefone">Telefone</label>
-              <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
+              <input type="tel" id="telefone" name="telefone" required pattern="\d{10,11}"
+                placeholder="Somente números">
 
+              <!-- Momento atual -->
               <label for="momento">Qual seu momento atual?</label>
               <select id="momento" name="momento" required>
                 <option value="">Escolha uma opção</option>
@@ -389,6 +461,7 @@
                 <option>Quero dar um start em um novo projeto que está nascendo.</option>
               </select>
 
+              <!-- Tipo de projeto -->
               <label for="tipoProjeto">Qual Tipo de projeto necessita?</label>
               <select id="tipoProjeto" name="tipoProjeto" required>
                 <option value="">Escolha uma opção</option>
@@ -397,26 +470,28 @@
                 <option>Outro</option>
               </select>
 
+              <!-- Investimento -->
               <label for="investimento">Disponibilidade de investimento</label>
               <select id="investimento" name="investimento" required>
                 <option value="">Escolha uma opção</option>
-                <option>Até R$ 1.500</option>
-                <option>R$ 1.500 a R$ 3.000</option>
-                <option>R$ 3.000 a R$ 5.000</option>
-                <option>R$ 5.000 a R$ 10.000</option>
-                <option>Acima de R$ 10.000</option>
+                <option value="1500">Até R$ 1.500</option>
+                <option value="1500-3000">R$ 1.500 a R$ 3.000</option>
+                <option value="3000-5000">R$ 3.000 a R$ 5.000</option>
+                <option value="5000-10000">R$ 5.000 a R$ 10.000</option>
+                <option value="10000">Acima de R$ 10.000</option>
               </select>
 
+              <!-- Descrição do projeto -->
               <label for="descricao">Fale um pouco mais sobre o projeto</label>
-              <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva seu projeto..."></textarea>
+              <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva seu projeto..."
+                required></textarea>
 
+              <!-- Briefing -->
               <label for="briefing">Já tem um briefing?</label>
               <input type="file" id="briefing" name="briefing" accept=".pdf,.doc,.docx,.txt" max="10485760">
               <small>Máximo 10MB. Formatos: PDF, DOC, DOCX, TXT</small>
 
-              <button class="btn primary" type="submit">Enviar formulário</button>
-
-              <!-- Checkbox Política de Privacidade -->
+              <!-- Política de Privacidade -->
               <div class="checkbox-field">
                 <input type="checkbox" id="privacy" name="privacy" required>
                 <label for="privacy">Li e aceito a <a href="/politica-privacidade" target="_blank">Política de
@@ -428,46 +503,41 @@
                 <div class="g-recaptcha" data-sitekey="SEU_SITE_KEY_AQUI"></div>
               </div>
 
+              <!-- Botão de envio -->
               <button class="btn primary" type="submit">Enviar formulário</button>
             </form>
 
-            <!-- Informações rápidas -->
-            <aside class="contact-info" data-aos="fade-left">
-              <h4>Contato rápido</h4>
-              <p>WhatsApp: <strong>+55 11 97667-9788</strong></p>
-              <p>Prazo médio de resposta: <strong>24–48h</strong></p>
-              <p>Atendimento profissional e personalizado.</p>
-            </aside>
+            <!-- Validação JS -->
+            <script>
+              document.getElementById("contactForm").addEventListener("submit", function (e) {
+                const telefone = document.getElementById("telefone").value.replace(/\D/g, "");
+
+                if (telefone.length < 10 || telefone.length > 11) {
+                  e.preventDefault();
+                  alert("Por favor, insira um telefone válido com 10 ou 11 dígitos.");
+                  return false;
+                }
+              });
+            </script>
+
+            </form>
+
+
           </div>
         </div>
       </section>
 
-      <!-- Script do reCAPTCHA -->
-      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-      </form>
-
-      <!-- Informações rápidas -->
-      <aside class="contact-info" data-aos="fade-left">
-        <h4>Contato rápido</h4>
-        <p>WhatsApp: <strong>+55 11 97667-9788</strong></p>
-        <p>Prazo médio de resposta: <strong>24–48h</strong></p>
-        <p>Atendimento profissional e personalizado.</p>
-      </aside>
-  </div>
-  </div>
-  </section>
-
-  </main>
-  <footer class="footer" data-aos="fade-up">
-    <div class="footer-inner">
-      <div class="brand-sm">
-        <div class="logo small">CB</div>
-        <div>CodeBy Ruan</div>
+    </main>
+    <footer class="footer" data-aos="fade-up">
+      <div class="footer-inner">
+        <div class="brand-sm">
+          <div class="logo small">CB</div>
+          <div>CodeBy Ruan</div>
+        </div>
+        <div class="legal">© <span id="year"></span> Todos os direitos reservados</div>
+        <div class="social"> <a href="#" aria-label="Instagram">IG</a> <a href="#" aria-label="LinkedIn">IN</a> </div>
       </div>
-      <div class="legal">© <span id="year"></span> Todos os direitos reservados</div>
-      <div class="social"> <a href="#" aria-label="Instagram">IG</a> <a href="#" aria-label="LinkedIn">IN</a> </div>
-    </div>
-  </footer> <button class="float-cta" id="quickQuote" data-aos="zoom-in-up">Pedir orçamento</button>
+    </footer> <button class="float-cta" id="quickQuote" data-aos="zoom-in-up">Pedir orçamento</button>
   </div>
   <script src="script.js" defer></script> <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
