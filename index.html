@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Web Design — Criação de Sites Profissionais</title>
+  <title>Web Designer — Criação de Sites Profissionais</title>
   <meta name="description"
     content="Agência digital focada em criação de sites modernos, responsivos e com performance otimizada." />
   <link rel="stylesheet" href="styles.css">
@@ -42,6 +42,10 @@
         <a href="#faq">FAQ</a>
         <a href="#contato" class="cta">Orçamento</a>
         <button id="themeToggle" class="btn-icon" aria-label="Alternar tema"></button>
+
+        <!-- Botão Hamburger para Mobile -->
+        <button id="menuToggle" class="hamburger">☰</button>
+
 
         <button id="logoutBtn" class="btn ghost" style="display:none;">Sair</button>
       </nav>
@@ -97,42 +101,79 @@
 
       <!-- SERVICES -->
       <section id="servicos" class="section" data-aos="fade-up">
-        <h3>Serviços</h3>
-        <div class="grid-3">
-          <article class="card" data-aos="zoom-in" data-aos-delay="100">
-            <h4>Site Institucional</h4>
-            <p>Páginas rápidas, SEO básico, formulário e integração com WhatsApp.</p>
-          </article>
-          <article class="card" data-aos="zoom-in" data-aos-delay="200">
-            <h4>Landing Page</h4>
-            <p>Foco em conversão: hero, prova social, formulário e CTA persistente.</p>
-          </article>
-          <article class="card" data-aos="zoom-in" data-aos-delay="300">
-            <h4>Loja Virtual</h4>
-            <p>Catálogo, carrinho, checkout e integração com gateways de pagamento.</p>
-          </article>
+        <div class="container">
+          <h3 class="section-title">Nossos Serviços</h3>
+          <p class="subheading">Transformamos suas ideias em sites profissionais, rápidos e focados em conversão.</p>
+
+          <div class="grid-3 services-grid">
+            <!-- Card 1 -->
+            <article class="service-card" data-aos="flip-left" data-aos-delay="100">
+              <div class="service-icon">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <h4>Site Institucional</h4>
+              <p>Páginas rápidas, SEO básico incluso e integração direta com WhatsApp para captar clientes.</p>
+              <a href="#contato" class="btn primary">Solicitar Orçamento</a>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="service-card" data-aos="flip-left" data-aos-delay="200">
+              <div class="service-icon">
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+              <h4>Landing Page</h4>
+              <p>Foco total em conversão: hero impactante, prova social, CTA fixo e formulário de captura de leads.</p>
+              <a href="#contato" class="btn primary">Solicitar Orçamento</a>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="service-card" data-aos="flip-left" data-aos-delay="300">
+              <div class="service-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+              <h4>Loja Virtual</h4>
+              <p>Catálogo de produtos, carrinho, checkout e integração com gateways de pagamento para vender online.</p>
+              <a href="#contato" class="btn primary">Solicitar Orçamento</a>
+            </article>
+          </div>
         </div>
       </section>
 
-      <!-- PORTFOLIO -->
+
+
+
       <section id="portfolio" class="section" data-aos="fade-up">
         <h3>Portfólio</h3>
+        <p class="subheading">Confira alguns dos projetos que desenvolvemos para nossos clientes.</p>
         <div class="grid-3">
-          <div class="card thumb" data-aos="fade-up" data-aos-delay="100"> <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60"
-              alt="Projeto restaurante">
-            <h4>Restaurante — Reserva online</h4>
+
+          <!-- Projeto 1 -->
+          <div class="card thumb" data-aos="fade-up" data-aos-delay="100">
+            <img src="img/projeto1.jpg" alt="Projeto Restaurante" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Restaurante — Reserva online</h4>
+              <p>Website otimizado para reservas e cardápio online.</p>
+            </div>
           </div>
-          <div class="card thumb" data-aos="fade-up" data-aos-delay="200"> <img
-              src="https://images.unsplash.com/photo-1521790366051-1f0b8d3d8f24?auto=format&fit=crop&w=1200&q=60"
-              alt="Projeto loja">
-            <h4>Loja Virtual — Aumentou vendas</h4>
+
+          <!-- Projeto 2 -->
+          <div class="card thumb" data-aos="fade-up" data-aos-delay="200">
+            <img src="img/projeto2.jpg" alt="Loja Virtual" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Loja Virtual — Aumentou vendas</h4>
+              <p>Loja virtual com integração de pagamento e carrinho moderno.</p>
+            </div>
           </div>
-          <div class="card thumb" data-aos="fade-up" data-aos-delay="300"> <img
-              src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=60"
-              alt="Portfolio">
-            <h4>Portfolio Pessoal — Minimalista</h4>
+
+          <!-- Projeto 3 -->
+          <div class="card thumb" data-aos="fade-up" data-aos-delay="300">
+            <img src="img/projeto3.jpg" alt="Portfolio Minimalista" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Portfolio Pessoal — Minimalista</h4>
+              <p>Design clean e minimalista para destacar trabalhos pessoais.</p>
+            </div>
           </div>
+
         </div>
       </section>
 
@@ -186,445 +227,528 @@
         </div>
       </section>
 
-      <!-- ABOUT -->
-      <section id="sobre" class="section about">
-        <div class="container about-grid">
+      <section id="quem-somos" class="about">
+        <div class="container">
+          <h3>Quem Somos</h3>
+          <p class="subheading">Transformamos ideias em soluções digitais incríveis, com criatividade e tecnologia de
+            ponta.</p>
 
-          <!-- Texto e diferenciais -->
-          <div class="about-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-            <h3 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">Quem Somos</h3>
-            <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
-              A <strong>CodeBy Ruan</strong> é uma agência digital focada em criar
-              <strong>sites profissionais, rápidos e estratégicos</strong>.
-              Mais do que páginas bonitas, entregamos soluções que
-              <strong>atraem clientes, geram vendas e fortalecem marcas</strong>.
-            </p>
+          <div class="about-grid">
+            <div class="about-text">
+              <p>Nossa equipe combina experiência e inovação para entregar resultados que encantam clientes e usuários.
+              </p>
+              <p>Criamos experiências únicas, desde o design até a implementação, garantindo qualidade e eficiência em
+                cada projeto.</p>
+            </div>
 
             <div class="features-grid">
-              <div class="feature-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800">
-                <div class="icon">🎨</div>
-                <h4>Design Responsivo</h4>
-                <p>Layout moderno e adaptável a qualquer dispositivo.</p>
+              <div class="feature-card">
+                <div class="highlight-line"></div>
+                <div class="icon">💡</div>
+                <h4>Inovação</h4>
+                <p>Soluções modernas e eficientes que acompanham as tendências do mercado.</p>
               </div>
-              <div class="feature-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+              <div class="feature-card">
+                <div class="highlight-line"></div>
                 <div class="icon">⚡</div>
-                <h4>Alta Performance</h4>
-                <p>Sites leves, com carregamento rápido e SEO otimizado.</p>
+                <h4>Agilidade</h4>
+                <p>Projetos entregues rapidamente, mantendo alta qualidade em cada detalhe.</p>
               </div>
-              <div class="feature-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1200">
-                <div class="icon">🔗</div>
-                <h4>Integrações Inteligentes</h4>
-                <p>WhatsApp, formulários, pagamentos e sistemas personalizados.</p>
+              <div class="feature-card">
+                <div class="highlight-line"></div>
+                <div class="icon">🤝</div>
+                <h4>Compromisso</h4>
+                <p>Transparência e satisfação total de nossos clientes são prioridade.</p>
               </div>
-            </div>
-          </div>
-
-          <!-- Estatísticas -->
-          <div class="about-stats" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-            <div class="stat-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-              <div class="num" data-target="120">0</div>
-              <div class="label">Projetos Entregues</div>
-            </div>
-            <div class="stat-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
-              <div class="num" data-target="98">0</div>
-              <div class="label">Clientes Satisfeitos</div>
-            </div>
-            <div class="stat-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
-              <div class="num" data-target="4">0</div>
-              <div class="label">Anos de Experiência</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===================== FAQ ===================== -->
-      <section class="faq" id="faq" data-aos="fade-up">
-        <h2>Perguntas Frequentes</h2>
-        <p class="subheading">Tire suas dúvidas sobre nossos serviços de criação de sites e atendimento.</p>
 
-        <div class="faq-container">
 
-          <div class="faq-item">
-            <button class="faq-question">
-              <i class="fa-solid fa-code"></i>
-              Quais tipos de sites vocês desenvolvem?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Desenvolvemos sites institucionais, lojas virtuais, landing pages e sistemas personalizados sob medida.
-                Todos com foco em performance, SEO e experiência do usuário.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <i class="fa-solid fa-clock"></i>
-              Qual o prazo médio para entrega de um site?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>O prazo varia conforme o tipo de projeto. Sites simples levam em média 7 a 10 dias úteis. Projetos
-                personalizados podem chegar a 20 dias.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <i class="fa-solid fa-mobile-screen"></i>
-              O site funciona em celular e tablet?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sim! Todos os nossos sites são 100% responsivos, adaptando-se perfeitamente a qualquer dispositivo.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <i class="fa-solid fa-magnifying-glass-chart"></i>
-              Vocês otimizam o site para aparecer no Google?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sim! Todos os projetos incluem SEO básico, estrutura otimizada e performance rápida para melhor
-                ranqueamento nos buscadores.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <i class="fa-solid fa-handshake"></i>
-              Oferecem suporte após a entrega?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sim, oferecemos suporte gratuito por 30 dias após a entrega e planos de manutenção contínua opcionais.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <i class="fa-solid fa-sack-dollar"></i>
-              Como funciona o pagamento?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>O pagamento pode ser feito via Pix, transferência bancária ou parcelado em até 3x no cartão. Um sinal
-                de 50% é solicitado para iniciar o projeto.</p>
-            </div>
-          </div>
-
+      <!-- Estatísticas -->
+      <div class="about-stats" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+        <div class="stat-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+          <div class="num" data-target="120">0</div>
+          <div class="label">Projetos Entregues</div>
         </div>
-      </section>
-
-
-      </section> <!-- COMO TRABALHAMOS -->
-      <section id="processo" class="section process" data-aos="fade-up">
-        <h3>Como Trabalhamos</h3>
-        <div class="steps">
-          <div class="step" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon"> <!-- Ícone SVG (lápis) --> <svg width="40" height="40" fill="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1.003 1.003 0 0 0 0-1.42l-2.34-2.34a1.003 1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z" />
-              </svg> </div>
-            <h4>1. Briefing</h4>
-            <p>Conversamos para entender seu negócio, objetivos e público-alvo.</p>
-          </div>
-          <div class="step" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon"> <!-- Ícone SVG (paleta) --> <svg width="40" height="40" fill="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  d="M12 3C7.03 3 3 7.03 3 12a9 9 0 0 0 9 9h1c.55 0 1-.45 1-1v-1.5c0-.83.67-1.5 1.5-1.5H17c2.76 0 5-2.24 5-5 0-4.97-4.03-9-9-9zM7 12c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm3-4c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm4-1c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z" />
-              </svg> </div>
-            <h4>2. Design</h4>
-            <p>Criamos a identidade visual do site, com foco em performance e UX.</p>
-          </div>
-          <div class="step" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon"> <!-- Ícone SVG (foguete) --> <svg width="40" height="40" fill="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  d="M12 2C8.13 2 5 5.13 5 9c0 2.5 1.5 4.67 3.67 5.5L9 21l3-2 3 2-1.33-6.5C17.5 13.67 19 11.5 19 9c0-3.87-3.13-7-7-7z" />
-              </svg> </div>
-            <h4>3. Entrega</h4>
-            <p>Lançamos o site otimizado, pronto para gerar resultados.</p>
-          </div>
+        <div class="stat-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
+          <div class="num" data-target="98">0</div>
+          <div class="label">Clientes Satisfeitos</div>
         </div>
-
-        <!-- nossa jornada -->
-
-        <section id="jornada" class="section timeline" data-aos="fade-up">
-          <h3>Nossa Jornada</h3>
-          <div class="timeline-wrapper">
-
-            <div class="timeline-item left" data-aos="fade-right" data-aos-delay="100">
-              <div class="timeline-content">
-                <span class="year">2025</span>
-                <p>Início da Web Designer, criando sites para pequenos negócios.</p>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-
-        <!-- TABELA DE PLANOS COMPARATIVA -->
-      </section>
-      <section id="comparativo" class="section compare" data-aos="fade-up">
-        <h3>Compare os Planos</h3>
-        <div class="table">
-          <div class="row header">
-            <div class="cell">Recursos</div>
-            <div class="cell destaque">Institucional</div>
-            <div class="cell destaque">Pro</div>
-            <div class="cell destaque">Custom</div>
-          </div>
-          <div class="row">
-            <div class="cell">SEO Básico</div>
-            <div class="cell">✔️</div>
-            <div class="cell">✔️</div>
-            <div class="cell">✔️ Avançado</div>
-          </div>
-          <div class="row">
-            <div class="cell">Integração WhatsApp</div>
-            <div class="cell">✔️</div>
-            <div class="cell">✔️</div>
-            <div class="cell">✔️</div>
-          </div>
-          <div class="row">
-            <div class="cell">Loja Virtual</div>
-            <div class="cell">❌</div>
-            <div class="cell">✔️</div>
-            <div class="cell">✔️ Avançada</div>
-          </div>
-          <div class="row">
-            <div class="cell">Suporte</div>
-            <div class="cell">30 dias</div>
-            <div class="cell">60 dias</div>
-            <div class="cell">Sob consulta</div>
-          </div>
+        <div class="stat-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
+          <div class="num" data-target="4">0</div>
+          <div class="label">Anos de Experiência</div>
         </div>
-      </section>
+      </div>
+  </div>
+  </section>
 
-      <!-- CONTACT -->
-      <section id="contato" class="section contact" data-aos="fade-up">
-        <div class="container">
-          <h3>Entraremos em contato com você</h3>
-          <p class="subheading">Preencha o formulário abaixo e nossa equipe retornará com a melhor proposta.</p>
-          <div class="contact-grid">
+  <!-- ===================== FAQ ===================== -->
+  <section class="faq" id="faq" data-aos="fade-up">
+    <h2>Perguntas Frequentes</h2>
+    <p class="subheading">Tire suas dúvidas sobre nossos serviços de criação de sites e atendimento.</p>
 
+    <div class="faq-container">
 
-            <form id="contactForm" class="contact-form" enctype="multipart/form-data"
-              action="https://formspree.io/f/xovppran" method="POST" novalidate>
-
-              <!-- Nome -->
-              <label for="nome">Nome completo</label>
-              <input type="text" id="nome" name="nome" required placeholder="Seu nome">
-
-              <!-- Empresa -->
-              <label for="empresa">Nome da empresa</label>
-              <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa">
-
-              <!-- Email -->
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="seu@email.com">
-
-              <!-- Telefone -->
-              <label for="telefone">Telefone</label>
-              <input type="tel" id="telefone" name="telefone" required pattern="\d{10,11}"
-                placeholder="Somente números">
-
-              <!-- Momento atual -->
-              <label for="momento">Qual seu momento atual?</label>
-              <select id="momento" name="momento" required>
-                <option value="">Escolha uma opção</option>
-                <option>Trabalho em uma empresa e preciso de um orçamento.</option>
-                <option>Sou empreendedor'(a)' e tenho uma demanda para orçar.</option>
-                <option>Quero dar um start em um novo projeto que está nascendo.</option>
-              </select>
-
-              <!-- Tipo de projeto -->
-              <label for="tipoProjeto">Qual Tipo de projeto necessita?</label>
-              <select id="tipoProjeto" name="tipoProjeto" required>
-                <option value="">Escolha uma opção</option>
-                <option>Desenvolvimento de E-commerce</option>
-                <option>Desenvolvimento de Landing page</option>
-                <option>Outro</option>
-              </select>
-
-              <!-- Investimento -->
-              <label for="investimento">Disponibilidade de investimento</label>
-              <select id="investimento" name="investimento" required>
-                <option value="">Escolha uma opção</option>
-                <option value="1500">Até R$ 1.500</option>
-                <option value="1500-3000">R$ 1.500 a R$ 3.000</option>
-                <option value="3000-5000">R$ 3.000 a R$ 5.000</option>
-                <option value="5000-10000">R$ 5.000 a R$ 10.000</option>
-                <option value="10000">Acima de R$ 10.000</option>
-              </select>
-
-              <!-- Descrição do projeto -->
-              <label for="descricao">Fale um pouco mais sobre o projeto</label>
-              <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva seu projeto..."
-                required></textarea>
-
-              <!-- Briefing -->
-              <label for="briefing">Já tem um briefing?</label>
-              <input type="file" id="briefing" name="briefing" accept=".pdf,.doc,.docx,.txt" max="10485760">
-              <small>Máximo 10MB. Formatos: PDF, DOC, DOCX, TXT</small>
-
-              <!-- Política de Privacidade -->
-              <div class="checkbox-field">
-                <input type="checkbox" id="privacy" name="privacy" required>
-                <label for="privacy">
-                  Li e aceito a
-                  <span id="openPrivacy" class="privacy-link">Política de Privacidade</span>
-                </label>
-              </div>
-
-              <!-- Modal de Política de Privacidade -->
-              <div id="privacyModal" class="modal hidden">
-                <div class="modal-content">
-                  <span id="closePrivacy" class="close">&times;</span>
-                  <h2>Política de Privacidade</h2>
-                  <p>Esta é a política de privacidade da <strong>CodeBy Ruan</strong>. Aqui explicamos como coletamos,
-                    usamos e protegemos os dados de nossos clientes e visitantes.</p>
-
-                  <h3>1. Coleta de Dados</h3>
-                  <p>Coletamos informações fornecidas por você em formulários de contato, cadastro ou orçamento, como
-                    nome, email, telefone e empresa.</p>
-
-                  <h3>2. Uso dos Dados</h3>
-                  <p>Utilizamos os dados para responder a solicitações, enviar informações sobre nossos serviços e
-                    melhorar a experiência do usuário em nosso site.</p>
-
-                  <h3>3. Proteção de Dados</h3>
-                  <p>Adotamos medidas técnicas e administrativas para proteger os dados contra acesso não autorizado,
-                    alteração ou divulgação.</p>
-
-                  <h3>4. Compartilhamento de Dados</h3>
-                  <p>Não compartilhamos seus dados com terceiros sem sua autorização, exceto quando exigido por lei.</p>
-
-                  <h3>5. Seus Direitos</h3>
-                  <p>Você pode solicitar acesso, correção ou exclusão de seus dados a qualquer momento, entrando em
-                    contato conosco pelo email: <strong>contato@ruansantos03.07@gmail.com</strong>.</p>
-
-                  <p>Última atualização: 01/11/2025</p>
-                </div>
-              </div>
-
-              <!-- Campos Formspree -->
-              <input type="hidden" name="_captcha" value="true">
-              <input type="hidden" name="_next" value="https://ruansantos2003.github.io/Agencia-de-Sites/">
-
-              <!-- Botão de envio -->
-              <button class="btn primary" type="submit">Enviar formulário</button>
-            </form>
-
-            <script>
-              // Validação de telefone
-              document.getElementById("contactForm").addEventListener("submit", function (e) {
-                const telefone = document.getElementById("telefone").value.replace(/\D/g, "");
-                if (telefone.length < 10 || telefone.length > 11) {
-                  e.preventDefault();
-                  alert("Por favor, insira um telefone válido com 10 ou 11 dígitos.");
-                  return false;
-                }
-              });
-
-              // Modal Política de Privacidade
-              const privacyModal = document.getElementById('privacyModal');
-              const openPrivacy = document.getElementById('openPrivacy');
-              const closePrivacy = document.getElementById('closePrivacy');
-
-              openPrivacy.addEventListener('click', () => {
-                privacyModal.classList.remove('hidden');
-              });
-
-              closePrivacy.addEventListener('click', () => {
-                privacyModal.classList.add('hidden');
-              });
-
-              window.addEventListener('click', (e) => {
-                if (e.target === privacyModal) {
-                  privacyModal.classList.add('hidden');
-                }
-              });
-
-                // FAQ
-
-              document.addEventListener('DOMContentLoaded', () => {
-                const faqItems = document.querySelectorAll('.faq-item');
-                faqItems.forEach(item => {
-                  const question = item.querySelector('.faq-question');
-                  question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    faqItems.forEach(i => i.classList.remove('active'));
-                    if (!isActive) { item.classList.add('active'); }
-                  });
-                });
-              });
-
-
-            </script>
-
-
-            </form>
-
-
-          </div>
-        </div>
-      </section>
-
-    </main>
-    <footer class="footer" data-aos="fade-up">
-      <div class="footer-container">
-        <!-- Coluna 1: Logo -->
-        <div class="footer-brand">
-          <div class="footer-logo">🌐</div>
-          <div class="footer-text">
-            <h4>Web Design</h4>
-            <p>Criação de sites modernos e otimizados.</p>
-          </div>
-        </div>
-
-        <!-- Coluna 2: Links úteis -->
-        <div class="footer-links">
-          <h5>Links Rápidos</h5>
-          <ul>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#portfolio">Portfólio</a></li>
-            <li><a href="#precos">Planos</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
-        </div>
-
-        <!-- Coluna 3: Contato -->
-        <div class="footer-contact">
-          <h5>Contato</h5>
-          <p>📍 São Paulo, SP</p>
-          <p>📧 contato@ruansantos03.07@gmail.com</p>
-          <p>📞 (11) 97667-9788</p>
-        </div>
-
-        <!-- Coluna 4: Redes sociais -->
-        <div class="footer-social">
-          <h5>Redes</h5>
-          <div class="social-icons">
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <i class="fa-solid fa-code"></i>
+          Quais tipos de sites vocês desenvolvem?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Desenvolvemos sites institucionais, lojas virtuais, landing pages e sistemas personalizados sob medida.
+            Todos com foco em performance, SEO e experiência do usuário.</p>
         </div>
       </div>
 
-      <!-- Linha inferior -->
-      <div class="footer-bottom">
-        <p>© <span id="year"></span> Web Design. Todos os direitos reservados.</p>
-        <p class="credits">Desenvolvido por <strong>DevRuan</strong></p>
+      <div class="faq-item">
+        <button class="faq-question">
+          <i class="fa-solid fa-clock"></i>
+          Qual o prazo médio para entrega de um site?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>O prazo varia conforme o tipo de projeto. Sites simples levam em média 7 a 10 dias úteis. Projetos
+            personalizados podem chegar a 20 dias.</p>
+        </div>
       </div>
-    </footer>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <i class="fa-solid fa-mobile-screen"></i>
+          O site funciona em celular e tablet?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sim! Todos os nossos sites são 100% responsivos, adaptando-se perfeitamente a qualquer dispositivo.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+          Vocês otimizam o site para aparecer no Google?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sim! Todos os projetos incluem SEO básico, estrutura otimizada e performance rápida para melhor
+            ranqueamento nos buscadores.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <i class="fa-solid fa-handshake"></i>
+          Oferecem suporte após a entrega?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sim, oferecemos suporte gratuito por 30 dias após a entrega e planos de manutenção contínua opcionais.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <i class="fa-solid fa-sack-dollar"></i>
+          Como funciona o pagamento?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>O pagamento pode ser feito via Pix, transferência bancária ou parcelado em até 3x no cartão. Um sinal
+            de 50% é solicitado para iniciar o projeto.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="processo" class="section timeline" data-aos="fade-up">
+    <h3>Como Trabalhamos</h3>
+    <p class="subheading">Transformamos ideias em sites que geram resultados.</p>
+
+    <div class="timeline-wrapper">
+
+      <div class="timeline-item">
+        <div class="timeline-icon">✏️</div>
+        <div class="timeline-content">
+          <h4>1. Briefing</h4>
+          <p>Entendemos seu negócio, objetivos e público-alvo para criar a estratégia perfeita.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon">🎨</div>
+        <div class="timeline-content">
+          <h4>2. Design</h4>
+          <p>Criamos layouts modernos, responsivos e uma experiência incrível para seus visitantes.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon">🚀</div>
+        <div class="timeline-content">
+          <h4>3. Entrega</h4>
+          <p>Lançamos o site otimizado, pronto para gerar resultados e aumentar suas conversões.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- nossa jornada -->
+
+  <section id="jornada" class="section timeline" data-aos="fade-up">
+    <h3>Nossa Jornada</h3>
+    <div class="timeline-wrapper">
+
+      <div class="timeline-item left" data-aos="fade-right" data-aos-delay="100">
+        <div class="timeline-content">
+          <span class="year">2025</span>
+          <p>Início da Web Designer, criando sites para pequenos negócios.
+          <h1>2025</h1>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- TABELA DE PLANOS COMPARATIVA -->
+  </section>
+  <section id="comparativo" class="section compare" data-aos="fade-up">
+    <h3>Compare os Planos</h3>
+    <div class="table">
+      <div class="row header">
+        <div class="cell">Recursos</div>
+        <div class="cell destaque">Institucional</div>
+        <div class="cell destaque">Pro</div>
+        <div class="cell destaque">Custom</div>
+      </div>
+      <div class="row">
+        <div class="cell">SEO Básico</div>
+        <div class="cell">✔️</div>
+        <div class="cell">✔️</div>
+        <div class="cell">✔️ Avançado</div>
+      </div>
+      <div class="row">
+        <div class="cell">Integração WhatsApp</div>
+        <div class="cell">✔️</div>
+        <div class="cell">✔️</div>
+        <div class="cell">✔️</div>
+      </div>
+      <div class="row">
+        <div class="cell">Loja Virtual</div>
+        <div class="cell">❌</div>
+        <div class="cell">✔️</div>
+        <div class="cell">✔️ Avançada</div>
+      </div>
+      <div class="row">
+        <div class="cell">Suporte</div>
+        <div class="cell">30 dias</div>
+        <div class="cell">60 dias</div>
+        <div class="cell">Sob consulta</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contato" class="section contact" data-aos="fade-up">
+    <div class="container">
+      <h3>Entraremos em contato com você</h3>
+      <p class="subheading">Preencha o formulário abaixo e nossa equipe retornará com a melhor proposta.</p>
+      <div class="contact-grid">
+
+
+        <form id="contactForm" class="contact-form" enctype="multipart/form-data"
+          action="https://formspree.io/f/xovppran" method="POST" novalidate>
+
+          <!-- Nome -->
+          <label for="nome">Nome completo</label>
+          <input type="text" id="name" name="name" placeholder="Seu nome" required />
+
+          <!-- Empresa -->
+          <label for="empresa">Nome da empresa</label>
+          <input type="text" id="company" name="company" placeholder="Nome da sua empresa" required />
+
+          <!-- Email -->
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="exemplo@email.com" required />
+
+          <!-- Telefone -->
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(XX) XXXXX-XXXX" required />
+
+          <!-- Momento atual -->
+          <label for="momento">Qual seu momento atual?</label>
+          <select id="momento" name="momento" required>
+            <option value="">Escolha uma opção</option>
+            <option>Trabalho em uma empresa e preciso de um orçamento.</option>
+            <option>Sou empreendedor'(a)' e tenho uma demanda para orçar.</option>
+            <option>Quero dar um start em um novo projeto que está nascendo.</option>
+          </select>
+
+          <!-- Tipo de projeto -->
+          <label for="tipoProjeto">Qual Tipo de projeto necessita?</label>
+          <select id="tipoProjeto" name="tipoProjeto" required>
+            <option value="">Escolha uma opção</option>
+            <option>Desenvolvimento de E-commerce</option>
+            <option>Desenvolvimento de Landing page</option>
+            <option>Outro</option>
+          </select>
+
+          <!-- Investimento -->
+          <label for="investimento">Disponibilidade de investimento</label>
+          <select id="investimento" name="investimento" required>
+            <option value="">Escolha uma opção</option>
+            <option value="1500">Até R$ 1.500</option>
+            <option value="1500-3000">R$ 1.500 a R$ 3.000</option>
+            <option value="3000-5000">R$ 3.000 a R$ 5.000</option>
+            <option value="5000-10000">R$ 5.000 a R$ 10.000</option>
+            <option value="10000">Acima de R$ 10.000</option>
+          </select>
+
+          <!-- Descrição do projeto -->
+          <label for="descricao">Fale um pouco mais sobre o projeto</label>
+          <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva seu projeto..." required></textarea>
+
+          <!-- Briefing -->
+          <label for="briefing">Já tem um briefing?</label>
+          <input type="file" id="briefing" name="briefing" accept=".pdf,.doc,.docx,.txt" max="10485760">
+          <small>Máximo 10MB. Formatos: PDF, DOC, DOCX, TXT</small>
+
+          <!-- Política de Privacidade -->
+          <div class="checkbox-field">
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <label for="privacy">
+              Li e aceito a
+              <span id="openPrivacy" class="privacy-link">Política de Privacidade</span>
+            </label>
+          </div>
+
+          <!-- Modal de Política de Privacidade -->
+          <div id="privacyModal" class="modal hidden">
+            <div class="modal-content">
+              <span id="closePrivacy" class="close">&times;</span>
+              <h2>Política de Privacidade</h2>
+              <p>Esta é a política de privacidade da <strong>Web Designer</strong>. Aqui explicamos como coletamos,
+                usamos e protegemos os dados de nossos clientes e visitantes.</p>
+
+              <h3>1. Coleta de Dados</h3>
+              <p>Coletamos informações fornecidas por você em formulários de contato, cadastro ou orçamento, como
+                nome, email, telefone e empresa.</p>
+
+              <h3>2. Uso dos Dados</h3>
+              <p>Utilizamos os dados para responder a solicitações, enviar informações sobre nossos serviços e
+                melhorar a experiência do usuário em nosso site.</p>
+
+              <h3>3. Proteção de Dados</h3>
+              <p>Adotamos medidas técnicas e administrativas para proteger os dados contra acesso não autorizado,
+                alteração ou divulgação.</p>
+
+              <h3>4. Compartilhamento de Dados</h3>
+              <p>Não compartilhamos seus dados com terceiros sem sua autorização, exceto quando exigido por lei.</p>
+
+              <h3>5. Seus Direitos</h3>
+              <p>Você pode solicitar acesso, correção ou exclusão de seus dados a qualquer momento, entrando em
+                contato conosco pelo email: <strong>contato@ruansantos03.07@gmail.com</strong>.</p>
+
+              <p>Última atualização: 01/11/2025</p>
+            </div>
+          </div>
+
+          <!-- Campos Formspree -->
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_next" value="https://ruansantos2003.github.io/Agencia-de-Sites//">
+
+          <!-- Botão de envio -->
+          <button class="btn primary" type="submit">Enviar formulário</button>
+        </form>
+
+        <script>
+          // Validação de telefone
+          document.getElementById("contactForm").addEventListener("submit", function (e) {
+            const telefone = document.getElementById("telefone").value.replace(/\D/g, "");
+            if (telefone.length < 10 || telefone.length > 11) {
+              e.preventDefault();
+              alert("Por favor, insira um telefone válido com 10 ou 11 dígitos.");
+              return false;
+            }
+          });
+
+          // Modal Política de Privacidade
+          const privacyModal = document.getElementById('privacyModal');
+          const openPrivacy = document.getElementById('openPrivacy');
+          const closePrivacy = document.getElementById('closePrivacy');
+
+          openPrivacy.addEventListener('click', () => {
+            privacyModal.classList.remove('hidden');
+          });
+
+          closePrivacy.addEventListener('click', () => {
+            privacyModal.classList.add('hidden');
+          });
+
+          window.addEventListener('click', (e) => {
+            if (e.target === privacyModal) {
+              privacyModal.classList.add('hidden');
+            }
+          });
+
+          // FAQ
+
+          document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+              const question = item.querySelector('.faq-question');
+              question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) { item.classList.add('active'); }
+              });
+            });
+          });
+
+
+          const menuToggle = document.getElementById('menuToggle');
+          const nav = document.querySelector('header .nav');
+
+          menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+          });
+
+          const form = document.getElementById('contactForm');
+          const formMessage = document.getElementById('formMessage');
+
+          const nameInput = document.getElementById('name');
+          const companyInput = document.getElementById('company');
+          const emailInput = document.getElementById('email');
+          const phoneInput = document.getElementById('phone');
+
+          // Função para validar apenas letras
+          function onlyLetters(input) {
+            input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
+          }
+
+          // Função para permitir apenas números
+          function onlyNumbers(input) {
+            input.value = input.value.replace(/\D/g, '');
+          }
+
+          // Eventos de input
+          nameInput.addEventListener('input', () => onlyLetters(nameInput));
+          companyInput.addEventListener('input', () => onlyLetters(companyInput));
+          phoneInput.addEventListener('input', () => onlyNumbers(phoneInput));
+
+          // Validação do email
+          function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+          }
+
+          // Feedback visual
+          function checkValidity(input) {
+            if (!input.value.trim()) {
+              input.style.borderColor = '#ff4d4d';
+              return false;
+            } else {
+              input.style.borderColor = '#00bfff';
+              return true;
+            }
+          }
+
+          // Envio do formulário
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let validName = checkValidity(nameInput);
+            let validCompany = checkValidity(companyInput);
+            let validEmail = validateEmail(emailInput.value);
+            let validPhone = checkValidity(phoneInput);
+
+            if (!validEmail) {
+              emailInput.style.borderColor = '#ff4d4d';
+            } else {
+              emailInput.style.borderColor = '#00bfff';
+            }
+
+            if (validName && validCompany && validEmail && validPhone) {
+              formMessage.style.color = '#00bfff';
+              formMessage.innerText = 'Formulário enviado com sucesso! ✨';
+              form.reset();
+              // Limpa cores
+              [nameInput, companyInput, emailInput, phoneInput].forEach(el => el.style.borderColor = '#00bfff');
+            } else {
+              formMessage.style.color = '#ff4d4d';
+              formMessage.innerText = 'Preencha todos os campos corretamente.';
+            }
+          });
+
+
+        </script>
+
+
+        </form>
+
+
+      </div>
+    </div>
+  </section>
+
+  </main>
+  <footer class="footer" data-aos="fade-up">
+    <div class="footer-container">
+      <!-- Coluna 1: Logo -->
+      <div class="footer-brand">
+        <div class="footer-logo">🌐</div>
+        <div class="footer-text">
+          <h4>Web Designer</h4>
+          <p>Criação de sites modernos e otimizados.</p>
+        </div>
+      </div>
+
+      <!-- Coluna 2: Links úteis -->
+      <div class="footer-links">
+        <h5>Links Rápidos</h5>
+        <ul>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#precos">Planos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Contato -->
+      <div class="footer-contact">
+        <h5>Contato</h5>
+        <p>📍 São Paulo, SP</p>
+        <p>📧 contato@ruansantos03.07@gmail.com</p>
+        <p>📞 (11) 97667-9788</p>
+      </div>
+
+      <!-- Coluna 4: Redes sociais -->
+      <div class="footer-social">
+        <h5>Redes</h5>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linha inferior -->
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Web Designer. Todos os direitos reservados.</p>
+      <p class="credits">Desenvolvido por <strong>DevRuan</strong></p>
+    </div>
+  </footer>
 
 
 
