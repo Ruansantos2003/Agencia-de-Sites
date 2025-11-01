@@ -82,7 +82,7 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  background: #111;
+
   padding: 10px 5%;
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -148,6 +148,46 @@ header {
     padding: 100px 20px;
     gap: 30px;
     transition: right 0.3s ease-in-out;
+  }
+
+  .nav.active {
+    right: 0;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  /* ... regras existentes ... */
+
+  .nav {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    /* CORRIGIDO: Se a header tiver 80px, mude para top: 80px */
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #111;
+    /* Fundo escuro */
+    padding: 100px 20px;
+    gap: 30px;
+    transition: right 0.3s ease-in-out;
+  }
+
+  /* CORREÇÃO ESSENCIAL: Mude a cor do texto do menu para CLARO no mobile */
+  .nav a {
+    color: #fff !important;
+    /* Mude para branco para contrastar com o fundo #111 */
+    width: 100%;
+    /* Ocupa a largura total para ser mais fácil de clicar */
+    text-align: left;
+  }
+
+  /* Garanta que o botão hambúrguer apareça e tenha cor clara */
+  .hamburger {
+    display: block;
+    color: #000;
+    /* Mude para preto para ser visível no topbar branco */
   }
 
   .nav.active {
