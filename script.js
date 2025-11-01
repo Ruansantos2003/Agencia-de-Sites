@@ -42,109 +42,6 @@ function showLogin() {
   toggleAuthMode.textContent = 'Crie agora grátis';
 }
 
-// Função para mostrar registro
-function showRegister() {
-  isLogin = false;
-  nameField.classList.remove('hidden');
-  phoneField.classList.remove('hidden');
-  confirmPasswordField.classList.remove('hidden');
-  authSubmitBtn.textContent = 'Registrar';
-  authTitle.textContent = 'Crie sua conta 👋';
-  authSubtitle.textContent = 'Preencha os campos abaixo para criar sua conta.';
-  toggleAuthMode.textContent = 'Já tenho conta';
-}
-
-// Abrir modal
-loginBtn.addEventListener('click', () => {
-  authModal.style.display = 'flex';
-  showLogin();
-});
-
-// Fechar modal
-closeModalBtn.addEventListener('click', () => authModal.style.display = 'none');
-
-// Alternar login/register
-toggleAuthMode.addEventListener('click', () => {
-  if (isLogin) showRegister();
-  else showLogin();
-});
-
-// Persistência de usuário (simples)
-function setUserLogged(email) {
-  localStorage.setItem('loggedUser', email);
-  loginBtn.style.display = 'none';
-  logoutBtn.style.display = 'inline-block';
-}
-
-function logoutUser() {
-  localStorage.removeItem('loggedUser');
-  loginBtn.style.display = 'inline-block';
-  logoutBtn.style.display = 'none';
-}
-
-// Atualiza UI ao carregar
-document.addEventListener('DOMContentLoaded', () => {
-  const user = localStorage.getItem('loggedUser');
-  if (user) setUserLogged(user);
-  else logoutUser();
-});
-
-// Logout
-logoutBtn.addEventListener('click', () => {
-  logoutUser();
-  alert('Você saiu da conta.');
-});
-
-// Autenticação (simulada)
-document.getElementById('authForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const email = document.getElementById('authEmail').value;
-  const password = document.getElementById('authPassword').value;
-
-  if (isLogin) {
-    // Login
-    if (!email || !password) {
-      alert('Preencha todos os campos!');
-      return;
-    }
-    alert(`Bem-vindo de volta, ${email}`);
-    setUserLogged(email);
-    authModal.style.display = 'none';
-  } else {
-    // Registro
-    const name = document.getElementById('authName').value;
-    const phone = document.getElementById('authPhone').value;
-    const confirm = document.getElementById('authConfirmPassword').value;
-
-    if (!name || !email || !phone || !password || !confirm) {
-      alert('Preencha todos os campos!');
-      return;
-    }
-
-    if (password !== confirm) {
-      alert('Senhas não conferem!');
-      return;
-    }
-
-    alert(`Conta criada para ${name} (${email})`);
-    setUserLogged(email);
-    authModal.style.display = 'none';
-  }
-});
-
-// Social login (simulado)
-document.querySelectorAll('.social-buttons button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const provider = btn.textContent.trim();
-    const fakeEmail = `${provider.toLowerCase()}@exemplo.com`;
-    alert(`Logado com ${provider} (${fakeEmail})`);
-    setUserLogged(fakeEmail);
-    authModal.style.display = 'none';
-  });
-});
-
-
-
 
 
 // ===================== CAROUSEL =====================
@@ -260,3 +157,187 @@ window.addEventListener("load", checkFloatCTA);
 if (window.AOS) {
   AOS.init({ duration: 1000, once: true });
 }
+
+// ===== TESTIMONIAL CAROUSEL - PROFESSIONAL (FADE, ACCESSIBLE, PAUSE ON HOVER) =====
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.querySelector('.testimonial-carousel');
+  if (!carousel) return;
+
+  const track = carousel.querySelector('.testimonial-track');
+  const cards = Array.from(carousel.querySelectorAll('.testimonial-card'));
+  const prevBtn = carousel.querySelector('.prev');
+  const nextBtn = carousel.querySelector('.next');
+  const dotsContainer = carousel.querySelector('.testimonial-dots');
+
+  let current = 0;
+  let intervalId = null;
+  const intervalTime = 5000;
+  const total = cards.length;
+
+  // build dots dynamically (prevents mismatch)
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'dot';
+      dot.setAttribute('aria-label', `Ir para depoimento ${i + 1}`);
+      dot.setAttribute('data-index', i);
+      dot.type = 'button';
+      dotsContainer.appendChild(dot);
+      dot.addEventListener('click', () => {
+        goTo(i);
+        restartAuto();
+      });
+    }
+  }
+
+  // update active states
+  function update() {
+    cards.forEach((c, i) => {
+      c.classList.toggle('active', i === current);
+      c.setAttribute('aria-hidden', i === current ? 'false' : 'true');
+    });
+    const dots = Array.from(dotsContainer.children);
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function goTo(i) {
+    current = (i + total) % total;
+    update();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  // autoplay
+  function startAuto() {
+    if (intervalId) clearInterval(intervalId);
+    intervalId = setInterval(next, intervalTime);
+  }
+  function stopAuto() {
+    if (intervalId) { clearInterval(intervalId); intervalId = null; }
+  }
+  function restartAuto() { stopAuto(); startAuto(); }
+
+  // keyboard support
+  carousel.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { prev(); restartAuto(); }
+    if (e.key === 'ArrowRight') { next(); restartAuto(); }
+  });
+
+  // hover/focus pause
+  carousel.addEventListener('mouseover', stopAuto);
+  carousel.addEventListener('mouseout', startAuto);
+  carousel.addEventListener('focusin', stopAuto);
+  carousel.addEventListener('focusout', startAuto);
+
+  // controls
+  if (nextBtn) nextBtn.addEventListener('click', () => { next(); restartAuto(); });
+  if (prevBtn) prevBtn.addEventListener('click', () => { prev(); restartAuto(); });
+
+  // init
+  createDots();
+  update();
+  // start autoplay unless user prefers reduced motion
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) startAuto();
+});
+
+const cards = document.querySelectorAll('.testimonial-card');
+const dotsContainer = document.querySelector('.carousel-dots');
+let current = 0;
+
+cards.forEach((_, i) => {
+  const dot = document.createElement('span');
+  if (i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => {
+    current = i;
+    update();
+  });
+  dotsContainer.appendChild(dot);
+});
+
+function restartStarAnimation() {
+  const activeCard = cards[current];
+  const stars = activeCard.querySelectorAll('.stars-svg stop');
+  stars.forEach(star => {
+    star.setAttribute('offset', '0');
+    void star.offsetWidth; // reinicia
+  });
+}
+
+function typeEffect(element, text) {
+  element.classList.remove('typing');
+  element.textContent = '';
+  void element.offsetWidth;
+  element.textContent = text;
+  element.classList.add('typing');
+}
+
+function update() {
+  cards.forEach((c, i) => {
+    c.classList.toggle('active', i === current);
+    c.setAttribute('aria-hidden', i === current ? 'false' : 'true');
+  });
+
+  const dots = Array.from(dotsContainer.children);
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+
+  const activeText = cards[current].querySelector('.testimonial-text');
+  const textContent = activeText.textContent;
+  typeEffect(activeText, textContent);
+  restartStarAnimation();
+}
+
+setInterval(() => {
+  current = (current + 1) % cards.length;
+  update();
+}, 6000);
+update();
+
+
+// ===================== FAQ INTERAÇÃO =====================
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+    question.addEventListener("click", () => {
+      // Fecha todos os outros
+      faqItems.forEach((el) => {
+        if (el !== item) el.classList.remove("active");
+      });
+
+      // Alterna o atual
+      item.classList.toggle("active");
+    });
+  });
+});
+
+// ===================== FAQ INTERAÇÃO =====================
+document.addEventListener('DOMContentLoaded', () => {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+
+      // Fecha todos
+      faqItems.forEach(i => i.classList.remove('active'));
+
+      // Abre o clicado se não estava ativo
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+});
+
+
+
+
+
+
+
