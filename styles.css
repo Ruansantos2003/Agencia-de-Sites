@@ -120,7 +120,26 @@ header {
   color: #00bfff;
 }
 
-/* Hamburger botão (mobile) */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  color: #fff;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -131,7 +150,6 @@ header {
   z-index: 1100;
 }
 
-/* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -144,14 +162,22 @@ header {
     right: -100%;
     width: 70%;
     height: 100vh;
-    background: #111;
-    padding: 100px 20px;
+    background-color: #111;
+    padding-top: 100px;
+    padding-left: 20px;
     gap: 30px;
     transition: right 0.3s ease-in-out;
+    z-index: 1000;
   }
 
   .nav.active {
     right: 0;
+  }
+
+  .nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
   }
 }
 

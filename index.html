@@ -33,6 +33,8 @@
           <div class="tagline">sites rápidos, limpos e rentáveis</div>
         </div>
       </div>
+
+      <button class="hamburger" id="hamburger">&#9776;</button>
       <nav class="nav">
         <a href="#servicos">Serviços</a>
         <a href="#portfolio">Portfólio</a>
@@ -43,8 +45,7 @@
         <a href="#contato" class="cta">Orçamento</a>
         <button id="themeToggle" class="btn-icon" aria-label="Alternar tema"></button>
 
-        <!-- Botão Hamburger para Mobile -->
-        <button id="menuToggle" class="hamburger">☰</button>
+
 
 
         <button id="logoutBtn" class="btn ghost" style="display:none;">Sair</button>
@@ -617,12 +618,19 @@
           });
 
 
-          const menuToggle = document.getElementById('menuToggle');
-          const nav = document.querySelector('header .nav');
+          const hamburger = document.getElementById('hamburger');
+          const nav = document.getElementById('nav');
 
-          menuToggle.addEventListener('click', () => {
+          hamburger.addEventListener('click', () => {
             nav.classList.toggle('active');
           });
+
+          nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              nav.classList.remove('active');
+            });
+          });
+
 
           const form = document.getElementById('contactForm');
           const formMessage = document.getElementById('formMessage');
@@ -689,6 +697,8 @@
               formMessage.innerText = 'Preencha todos os campos corretamente.';
             }
           });
+
+
 
 
         </script>
