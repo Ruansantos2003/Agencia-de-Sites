@@ -2141,6 +2141,13 @@ h3 {
     display: none;
     flex-direction: column;
     width: 100%;
+    position: absolute;
+    top: 70px;
+    right: 0%;
+    background-color: #111;
+    text-align: center;
+    padding: 1.5rem 0;
+    z-index: 999;
   }
 
   nav.nav.active {
